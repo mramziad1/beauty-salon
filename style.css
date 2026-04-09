@@ -1,0 +1,511 @@
+:root {
+  --primary: #f08080;   /* وردي رئيسي */
+  --secondary: #ffb6b9; /* وردي فاتح */
+  --accent: #d4af37;    /* ذهبي */
+  --dark: #2c2c2c;      /* نصوص غامقة */
+  --white: #ffffff;      /* أبيض */
+  --soft-bg: #fff5f7;    /* خلفية ناعمة */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: var(--white);
+  color: var(--dark);
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark);
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--primary);
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  background: rgba(241, 205, 205, 0.8); /* شفاف */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-icon {
+  width: 24px;  /* حجم صغير */
+  height: 24px;
+  object-fit: contain;
+  cursor: default;
+}
+.logo h1 {
+  font-size: 28px;
+  font-weight: bold;
+  cursor: default;
+}
+
+.logo h1 .white {
+  color: var(--white); /* نص أبيض */
+}
+
+.logo h1 .pink {
+  color: var(--primary); /* وردي رئيسي */
+}
+
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+
+}
+
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 90vh;
+  background: url('images/hero.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(141, 107, 107, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.hero-content h1,
+.hero-content p {
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+
+.hero-content button {
+  padding: 14px 35px;
+  border: none;
+  background: var(--primary);
+  color: var(--soft-bg);
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-content button:hover {
+  background: var(--accent);
+  transform: scale(1.05);
+}
+
+.about {
+  background: var(--soft-bg);
+  padding: 80px 10%; 
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+  max-width: 1200px; 
+  margin: 0 auto;    
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 38px;
+  margin-bottom: 20px;
+  color: var(--dark);
+}
+
+.about-text p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+.about-text button {
+  padding: 12px 25px;
+  border: none;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.about-text button:hover {
+  background: var(--accent);
+  transform: scale(1.05);
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* الصورة على يمين Section */
+  align-items: center;
+}
+
+.about-image img {
+  width: 400px;
+  border-radius: 25px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  transform: rotate(-3deg);
+  transition: transform 0.3s;
+}
+
+.about-image img:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+/* Services Section */
+.services {
+  background: var(--white);
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 38px;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+.services p {
+  font-size: 18px;
+  color: var(--dark);
+  margin-bottom: 50px;
+}
+
+/* كروت الخدمات */
+.services-cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.service-card {
+  background: var(--soft-bg);
+  border-radius: 25px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.service-card img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  transition: transform 0.4s;
+}
+
+.service-card h3 {
+  font-size: 22px;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 16px;
+  color: var(--dark);
+  line-height: 1.5;
+}
+
+/* Hover Effect */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.service-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+  .services-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+ /* Footer */
+.footer {
+  background: var(--dark);
+  color: var(--white);
+  padding: 30px 10%; 
+  margin-top: 50px;
+  font-size: 14px;   
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;        
+  justify-content: space-between;
+}
+
+.footer h3 {
+  margin-bottom: 10px; 
+  color: var(--primary);
+  font-size: 16px;     
+}
+
+.footer p, .footer ul, .footer li {
+  color: var(--white);
+  font-size: 14px;     
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px; 
+}
+
+.footer-links a {
+  color: var(--white);
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;          
+  margin-top: 8px;
+}
+
+.social-icons img {
+  width: 25px;     
+  height: 25px;     
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;   
+  font-size: 12px;  
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 10px;
+}
+
+
+/* Services Header */
+
+.container {
+  width: 85%;
+  margin: auto;
+}
+
+.services-header {
+  text-align: center;
+  padding: 60px 10%;
+  background: var(--soft-bg);
+  color: var(--dark);
+}
+
+.services-header h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.services-header p {
+  font-size: 18px;
+}
+
+/* Layout */
+.service-detail {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 60px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.service-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* الصور بشكل عام */
+.service-images img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: 0.3s;
+
+}
+
+/* الصورة الثالثة بالنص تحت */
+.service-images img:nth-child(3) {
+  grid-column: 1 / span 2;
+  width: 60%;
+  justify-self: center;
+}
+.service-images img:hover {
+  transform: scale(1.07);
+}
+
+
+/* النص */
+.service-text {
+  flex: 1;
+}
+
+.service-text h2 {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.service-text p {
+  margin-bottom: 15px;
+}
+
+.service-text ul {
+  padding-left: 20px;
+}
+
+
+/*contact pge*/
+/* السيكشن */
+.contact {
+  padding: 60px 0;
+  text-align: center;
+}
+
+/* العنوان */
+.contact h2 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.contact-sub {
+  margin-bottom: 40px;
+  color: #777;
+}
+
+/* layout */
+.contact-wrapper {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+/* معلومات */
+.contact-info {
+  flex: 1;
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.contact-info h3 {
+  margin-bottom: 15px;
+}
+
+/* الفورم */
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+}
+
+.contact-form button {
+  padding: 12px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: var(--accent);
+}
